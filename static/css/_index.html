@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>AIS statics</title>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCy_57WIw8pcG73uTj46f6M1jojhxteh6o&language=en">
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../plugins/bootstrap-4.3.1/css/bootstrap.css">
+    <link href='https://fonts.googleapis.com/css?family=Galada' rel='stylesheet'>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="../plugins/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+    <nav class="navbar navbar-default" role="navigation" style="background-color: #efefef">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" >ais system</a>
+            </div>
+        </div>
+
+    </nav>
+    <div class="main-dis">
+        <div class="title"><h3>static data visualization</h3></div>
+        <div class="describe">
+            The system currently records 1,311,089 messages in Feb 2021.<br>
+            To visualize AIS messages, please enter the time period
+            (e.g. 20220101083012 stands for JAN-01-2022 8:30:12)
+        </div>
+
+
+
+        <form id="timeform" method="post" action="/info" style="padding-bottom: 30px">
+            <div class="input1">
+                <input type="text" id="start" name="start" class="input_view"/>
+
+            </div>
+            <div class="input2">to</div>
+            <div class="input3">
+                <input type="text" id="end" name="end" class="input_view"/>
+
+            </div>
+            <input type="button" class="input4 button-view" value="submit" onclick="verify()">
+            <div class="input5" id="res_num"></div>
+            <input type="button" class="input6 button-view button-view2" value="moveMarker" onclick="movement()">
+        </form>
+
+        <div id="googleMap" class="map"></div>
+
+
+
+        <div id="aisData" d="{{data_list}}" tm="{{time}}" style="display: none"></div>
+    </div>
+
+
+    <script id="mapScript" type="text/javascript" src="../js/map.js"></script>
+    <script src="../js/submit.js"></script>
+
+
+
+</body>
+</html>

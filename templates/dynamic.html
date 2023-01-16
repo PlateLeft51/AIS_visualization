@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>AIS dynamic</title>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCy_57WIw8pcG73uTj46f6M1jojhxteh6o&language=en">
+    </script>
+    <link rel="stylesheet" href="../static/css/style-main.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Galada' rel='stylesheet'>
+</head>
+<body>
+<div style="height: 100%">
+    <nav class="navbar navbar-default" role="navigation" style="background-color: #efefef;padding-left:30px;padding-right: 30px">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" >ais system</a>
+            </div>
+            <div>
+                <ul class="nav navbar-nav ">
+                    <li><a href="/home">static</a></li>
+                    <li class="active"><a href="/dyn">dynamic</a></li>
+                    <li><a href="/tra">trajectory</a></li>
+                    <li><a href="/out">outliers(beta)</a></li>
+                </ul>
+            </div>
+            <form class="navbar-form navbar-right" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search mmsi">
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+        </div>
+    </nav>
+
+
+    <table class="main-table">
+        <tr>
+            <td style="width:1200px;">
+                <div id="googleMap" class="map"></div>
+            </td>
+            <td class="col-right">
+                <div class="describe">
+                    The system currently records 1,311,089 messages in Feb 2021.<br>
+                    To visualize AIS messages, please enter the time period
+                    (e.g. 20220101083012 stands for JAN-01-2022 8:30:12)
+                </div>
+                <form id="timeform" method="post" action="/dyn">
+                    <div class="input1">
+                        <input type="text" id="start" name="start" class="input_view" placeholder="Starting time"/>
+
+                    </div>
+                    <div class="input2">
+                        <input type="text" id="end" name="end" class="input_view" placeholder="Ending time"/>
+
+                    </div>
+                    <input type="button" class="input3 button-view" value="submit" onclick="verify()">
+                    <div class="input4" id="res_num"></div>
+
+                </form>
+                <div id="bar" class="progress" style="width: 100%">
+                    <div id="probar" class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+                        <span class="sr-only">60% Complete</span>
+                    </div>
+                </div>
+                <input type="button" id="backward" class="button-view" value="backward" onclick="play_back()">
+                <input type="button" id="play" class="button-view" value="play" onclick="play()">
+                <input type="button" id="forward" class="button-view" value="forward" onclick="play_forward()">
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="1" style="background-color:#eeeeee;text-align:center;margin-top:5px">
+                <img src="../static/img/bulk/5.png">&nbsp;Bulk Carrier&emsp;&emsp;
+                <img src="../static/img/cargo/5.png">&nbsp;Cargo&emsp;&emsp;
+                <img src="../static/img/container/5.png">&nbsp;Container Ship&emsp;&emsp;
+                <img src="../static/img/passenger/5.png">&nbsp;Passenger Ship&emsp;&emsp;
+                <img src="../static/img/special/5.png">&nbsp;Special Purpose Ship&emsp;&emsp;
+                <img src="../static/img/tanker/5.png">&nbsp;Tanker&emsp;&emsp;
+                <img src="../static/img/tug/5.png">&nbsp;Tug&emsp;&emsp;
+                <img src="../static/img/unknown/5.png">&nbsp;Unknown&emsp;&emsp;
+            </td>
+        </tr>
+    </table>
+</div>
+
+
+<div id="aisData" d="{{data_list}}" tm="{{time}}" tp="{{type}}" ship_info="{{ship_type}}" track="{{track}}" style="display: none"></div>
+<script id="mapScript" type="text/javascript" src="../static/js/map.js"></script>
+<script src="../static/js/submit.js"></script>
+</body>
+</html>

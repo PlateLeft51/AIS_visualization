@@ -1,0 +1,101 @@
+.main-dis{
+    background: #fefefe;
+}
+.title{
+    margin-top: 50px;
+    margin-bottom: 45px;
+    font-family: 'Ubuntu', cursive;
+    color:	#3366CC;
+    font-size: 35px;
+    text-align: center;
+    font-weight: 100;
+}
+.describe{
+    font-size: 17px;
+    color:#2255BB;
+}
+.input1{
+    float:bottom;
+    margin-top:45px;
+    color:#4682B4;
+}
+.input2{
+    float:bottom;
+    margin-top:30px;
+    color:#4682B4;
+}
+.input3{
+    float:bottom;
+    margin-top:30px;
+    margin-left: 70%;
+}
+.input4{
+    float:right;
+    margin-right: 50px;
+    margin-top:40px;
+    margin-bottom: 25%;
+    color:#3366CC;
+    font-size: 16px;
+}
+.input5{
+    float:bottom;
+    margin-top:30px;
+}
+.input6{
+    float:bottom;
+    margin-top:10px;
+}
+.input_view{
+    border: 1px none #D0D0D0;
+    border-bottom-style: solid;
+    outline: none;
+    height: 30px;
+    width: 465px;
+    font-size: 16px;
+    text-align: center;
+}
+    .input_view:focus{
+        border: 2px none #ACD6FF;
+        border-bottom-style: solid;
+        height: 30px;
+        width: 465px;
+    }
+.button-view {
+    height: 30px;
+    width: 90px;
+    border: none;
+    color: #1296db;
+    background: none;
+    font-size: 16px;
+    font-family: Arial;
+}
+.button-view2{
+    width: 120px;
+}
+.map{
+    width:1200px;
+    height:700px;
+    border-radius: 10px;
+}
+
+.main-table{
+    width:94%;
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-top: 3%;
+    /*background: #0c5460;*/
+}
+.col-right{
+    /*background-color:#eeeeee;*/
+    height:100%;
+    padding: 30px;
+}
+html,body{
+    height:100%;
+}
+.bar-mid{
+    margin-left: 90px;
+}
+.bar-right{
+    margin-right: 30px;
+}

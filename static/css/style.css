@@ -1,0 +1,76 @@
+.main-dis{
+    background: #fefefe;
+}
+.title{
+    margin-top: 50px;
+    margin-bottom: 45px;
+    font-family: 'Galada', cursive;
+    color:	#3366CC;
+    font-size: 35px;
+    text-align: center;
+    font-weight: 100;
+}
+.describe{
+    margin-left: calc((100% - 1400px) / 2);
+    margin-bottom: 30px;
+    color:#4682B4;
+}
+.input1{
+    float:left;
+    margin-left:15%;
+}
+.input2{
+    float:left;
+    margin-left:30px;
+    color:#4682B4;
+}
+.input3{
+    float:left;
+    margin-left:30px;
+}
+.input4{
+    float:left;
+    margin-left:40px;
+}
+.input5{
+    float:left;
+    margin-left:30px;
+}
+.input6{
+    float:left;
+    margin-left:10px;
+}
+.input_view{
+    border: 1px none #D0D0D0;
+    border-bottom-style: solid;
+    outline: none;
+    height: 30px;
+    width: 465px;
+    font-size: 16px;
+    text-align: center;
+}
+    .input_view:focus{
+        border: 2px none #ACD6FF;
+        border-bottom-style: solid;
+        height: 30px;
+        width: 465px;
+    }
+.button-view {
+    height: 30px;
+    width: 90px;
+    border: none;
+    color: #1296db;
+    background: none;
+    font-size: 16px;
+    font-family: Arial;
+}
+.button-view2{
+    width: 120px;
+}
+.map{
+    width:1400px;
+    height:600px;
+    margin-top:15px;
+    margin-left: calc((100% - 1400px) / 2);
+    border-radius: 10px;
+}
